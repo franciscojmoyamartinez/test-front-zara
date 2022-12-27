@@ -20,9 +20,12 @@ class ListPodcast extends React.Component {
         // set the response in class states
         const dataArray = [];
         if (res.data.feed.entry.length > 0) {
+          
           res.data.feed.entry.forEach((element) => {
             dataArray.push({
-              'name' : element.summary
+              'title' : element.title.label,
+              'author' : element['im:artist'].label,
+              'img' : element['im:image'][2].label,
             });
           });
           this.setState({

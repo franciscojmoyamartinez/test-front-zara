@@ -1,0 +1,9 @@
+.box-item {
+    background-color: #fff;
+    padding: 2px;
+    width: 300px;
+    text-align: center;
+}
+span:first-child {
+    font-weight: bold;
+}
