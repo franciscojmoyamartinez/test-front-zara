@@ -1,5 +1,6 @@
 import Paper from '@mui/material/Paper';
 import { experimentalStyled as styled } from '@mui/material/styles';
+import { Link } from 'react-router-dom';
 import '../../components/listPodcasts/list.css'
 const Item = (data) => {
   const { podcast } = data;
@@ -29,14 +30,16 @@ const Item = (data) => {
     borderRadius: '50%',
     top: '20px',
   });
-  return ( 
-    <div className='box-div'>
-      <Img src={podcast.img}></Img>
-      <Item>
-        <Span>{podcast.title}</Span>
-        <Span>{podcast.author}</Span>
-      </Item>
-    </div>
+  return (
+    <Link to={`/podcast/${podcast.podcastId}`}>
+      <div className='box-div'>
+        <Img src={podcast.img}></Img>
+        <Item>
+          <Span>{podcast.title}</Span>
+          <Span>Author: {podcast.author}</Span>
+        </Item>
+      </div>
+    </Link> 
   );
 };
 
