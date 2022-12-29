@@ -15,7 +15,6 @@ import moment from 'moment';
 
 const ListEpisodes = (props) => {
   const [arrayEpisodes, setEpisodes] = React.useState(null);
-
   const { state } = useLocation();
   let podcastData = state.podcast;
 
@@ -26,7 +25,7 @@ const ListEpisodes = (props) => {
   let listRequest = (id) => {
     listReq(id)
       .then((res) => {
-        var arrayDDD = res.data.results;
+        let arrayDDD = res.data.results;
         arrayDDD.shift();
         setEpisodes(arrayDDD);
       })
@@ -41,9 +40,9 @@ const ListEpisodes = (props) => {
 
   return (
 
-    <Card sx={{ width: 900 }}>
-      <CardContent>
-        <Typography gutterBottom variant="body1" component="div">
+    <Card sx={{ width: 900, margin: '14px 250px 0 0' }}>
+      <CardContent className='css-11xur9t-MuiPaper-root-MuiTableContainer-root'>
+        <Typography gutterBottom variant="body1" component="div" sx= {{ fontWeight: 'bold'}}>
             Episodes: {Array.isArray(arrayEpisodes) ? arrayEpisodes.length : 0}
         </Typography>
       </CardContent>
@@ -58,12 +57,14 @@ const ListEpisodes = (props) => {
               </TableRow>
             </TableHead>
             <TableBody>
-
             {Array.isArray(arrayEpisodes)
             ? arrayEpisodes.map((row) => (
               <TableRow key={row.trackId}>
               <TableCell component="th" scope="row">
-                  <Link to={`/podcast/${podcastData.podcastId}/episode/${row.trackId}`} state={{ podcast: podcastData, episode: row }}>{row.trackName}</Link>
+                  <Link to={`/podcast/${podcastData.podcastId}/episode/${row.trackId}`} 
+                        state={{ podcast: podcastData, episode: row }}
+                        style={{ textDecoration: 'none' }}
+                        >{row.trackName}</Link>
               </TableCell>
               <TableCell align="right">{moment(row.releaseDate).format('DD/MM/YYYY')}</TableCell>
               <TableCell align="right">{milisegundosAHoras(row.trackTimeMillis)}</TableCell>

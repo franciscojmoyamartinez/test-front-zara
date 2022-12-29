@@ -9,18 +9,18 @@ const Info = (props) => {
   const { state } = useLocation();
   let episodeData = state.episode;
   return (
-    <Card sx={{ width: 150, flexGrow: 1 }}>
+    <Card sx={{ width: 900, margin: '14px 250px 0 0' }}>
       <CardActionArea>
         <CardContent>
-          <Typography gutterBottom variant="body1" component="div">
+          <Typography gutterBottom variant="body1" component="div" sx={{fontWeight: 'bold'}}>
               {episodeData.trackName}
           </Typography>
           <Typography gutterBottom variant="body2" component="div">
               {episodeData.description}
           </Typography>
-          <Divider />
+          <Divider sx={{margin: '20px 0'}}/>
           <Typography variant="caption" color="text.secondary">
-          <audio src={episodeData.episodeUrl} controls="controls"  preload="none"></audio>
+            <audio src={episodeData.episodeUrl} controls="controls"  preload="none"></audio>
           </Typography>
         </CardContent>
       </CardActionArea>

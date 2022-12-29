@@ -12,27 +12,26 @@ const Sidebar = (props) => {
   let podcastData = state.podcast;
   
   return (
-    <Card sx={{ width: 150, flexGrow: 1 }}>
+    <Card sx={{ height: 500, margin: '10px 200px 0 200px', width: 1/4, flexGrow: 1 }}>
       <CardActionArea>
         <CardMedia
           component="img"
           height="140"
           image={podcastData.img}
-          alt="green iguana"
           sx={{ width: 150, margin: '10px auto'}}
         />
-        <Divider />
+        <Divider sx={{margin: '20px 0'}}/>
         <CardContent>
-          <Typography gutterBottom variant="body1" component="div">
+          <Typography gutterBottom variant="body1" component="div" sx={{fontWeight: 'bold'}}>
               {podcastData.title}
           </Typography>
           <Typography gutterBottom variant="body2" component="div">
-              by {podcastData.author}
+            <div style={{fontStyle: 'italic'}}>by {podcastData.author}</div>
           </Typography>
-          <Divider />
+          <Divider sx={{margin: '20px 0'}}/>
           <Typography variant="caption" color="text.secondary">
-              <strong>Description:</strong>
-              {podcastData.description}
+              <div style={{fontWeight: 'bold', fontSize: 14}}>Description:</div>
+              <div style={{fontStyle: 'italic'}}>{podcastData.description}</div>
           </Typography>
         </CardContent>
       </CardActionArea>
