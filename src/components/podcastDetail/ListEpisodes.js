@@ -51,9 +51,9 @@ const ListEpisodes = (props) => {
           <Table className="prueba" size="small" aria-label="a dense table">
             <TableHead>
               <TableRow>
-                <TableCell>Title</TableCell>
-                <TableCell align="right">Date</TableCell>
-                <TableCell align="right">Duration</TableCell>
+                <TableCell sx={{ fontWeight: 'bold'}}>Title</TableCell>
+                <TableCell sx={{ fontWeight: 'bold'}}>Date</TableCell>
+                <TableCell sx={{ fontWeight: 'bold'}}>Duration</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -66,8 +66,8 @@ const ListEpisodes = (props) => {
                         style={{ textDecoration: 'none' }}
                         >{row.trackName}</Link>
               </TableCell>
-              <TableCell align="right">{moment(row.releaseDate).format('DD/MM/YYYY')}</TableCell>
-              <TableCell align="right">{milisegundosAHoras(row.trackTimeMillis)}</TableCell>
+              <TableCell>{moment(row.releaseDate).format('DD/MM/YYYY')}</TableCell>
+              <TableCell>{milisegundosAHoras(row.trackTimeMillis)}</TableCell>
               </TableRow>
             )): null}
             </TableBody>
