@@ -36,9 +36,7 @@ const Sidebar = (props) => {
           </Typography>
         </CardContent>
       </CardActionArea>
-    </Card>
-    
-      
+    </Card>  
   );
 }
 
