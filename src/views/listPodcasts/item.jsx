@@ -31,7 +31,7 @@ const Item = (data) => {
     top: '20px',
   });
   return (
-    <Link to={`/podcast/${podcast.podcastId}`}>
+    <Link to={`/podcast/${podcast.podcastId}`} state={{ podcast }}>
       <div className='box-div'>
         <Img src={podcast.img}></Img>
         <Item>
