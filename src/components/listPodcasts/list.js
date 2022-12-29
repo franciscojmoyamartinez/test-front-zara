@@ -27,6 +27,7 @@ class ListPodcast extends React.Component {
               'title' : element.title.label,
               'author' : element['im:artist'].label,
               'img' : element['im:image'][2].label,
+              'description' : element.summary.label,
             });
           });
           this.setState({
