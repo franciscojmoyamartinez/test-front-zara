@@ -24,7 +24,7 @@ class ListPodcast extends React.Component {
           res.data.feed.entry.forEach((element) => {
             dataArray.push({
               'podcastId' : element.id.attributes['im:id'],
-              'title' : element.title.label,
+              'title' : element['im:name'].label,
               'author' : element['im:artist'].label,
               'img' : element['im:image'][2].label,
               'description' : element.summary.label,
