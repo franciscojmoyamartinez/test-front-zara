@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
@@ -36,7 +36,6 @@ const ListEpisodes = (props) => {
   let milisegundosAHoras = (trackTimeMillis) => {
     let seconds = Math.floor(trackTimeMillis / 1000);
     let minutes = Math.floor(seconds / 60);
-    let hours = Math.floor(minutes / 60);
     return `${minutes}:00`;
   }
 
@@ -64,7 +63,7 @@ const ListEpisodes = (props) => {
             ? arrayEpisodes.map((row) => (
               <TableRow key={row.trackId}>
               <TableCell component="th" scope="row">
-                  {row.trackName}
+                  <Link to={`/podcast/${podcastData.podcastId}/episode/${row.trackId}`} state={{ podcast: podcastData, episode: row }}>{row.trackName}</Link>
               </TableCell>
               <TableCell align="right">{moment(row.releaseDate).format('DD/MM/YYYY')}</TableCell>
               <TableCell align="right">{milisegundosAHoras(row.trackTimeMillis)}</TableCell>
