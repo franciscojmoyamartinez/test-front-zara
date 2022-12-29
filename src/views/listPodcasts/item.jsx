@@ -20,7 +20,6 @@ const Item = (data) => {
   }));
   const Span = styled('span')({
     display: 'block',
-    fontWeight: 'bold',
   });
   const Img = styled('img')({
     margin: 'auto',
@@ -38,7 +37,7 @@ const Item = (data) => {
       <div className='box-div'>
         <Img src={podcast.img}></Img>
         <Item>
-          <Span>{podcast.title}</Span>
+          <Span sx={{ fontWeight: 'bold'}}>{podcast.title}</Span>
           <Span>Author: {podcast.author}</Span>
         </Item>
       </div>

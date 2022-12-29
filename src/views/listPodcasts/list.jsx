@@ -8,7 +8,7 @@ import BreadCrumb from '../../components/common/BreadCrumb';
 import { CircularProgress } from '@mui/material';
 const template = (component) => {
   const {
-    data,
+    data
   } = component.state;
   return (
     <div>
@@ -19,8 +19,8 @@ const template = (component) => {
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={2}>
           <Grid item md={12} className='grid-box' sx={{ display: 'flex', justifyContent: 'flex-end', margin: '20px 80px'}}>
-            <span style={{ backgroundColor: '#4570b4', color: '#fff', borderRadius: '25%', width: '28px', height: '20px', padding: '5px', textAlign: 'center', fontWeight: 'bold'}}>{data.length}</span>
-            <SearchBar/>
+            <span style={{ backgroundColor: '#4570b4', color: '#fff', borderRadius: '25%', width: '28px', height: '20px', padding: '5px', marginRight: '10px', textAlign: 'center', fontWeight: 'bold'}}>{data.length}</span>
+            <SearchBar keyword="Filter Podcast..."/>
           </Grid>
           {data.map((podcast, index) => (
             <Grid item md={3} key={index} className='grid-box'>
