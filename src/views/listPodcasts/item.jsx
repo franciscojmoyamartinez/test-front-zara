@@ -37,7 +37,7 @@ const Item = (data) => {
       <div className='box-div'>
         <Img src={podcast.img}></Img>
         <Item>
-          <Span sx={{ fontWeight: 'bold'}}>{podcast.title}</Span>
+          <Span sx={{ fontWeight: 'bold', margin: '10px', textTransform: 'uppercase'}}>{podcast.title}</Span>
           <Span>Author: {podcast.author}</Span>
         </Item>
       </div>
