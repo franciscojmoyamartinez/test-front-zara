@@ -1,7 +1,7 @@
 const globalConf = {
   env: 'development',
-  urlApi: 'https://itunes.apple.com/us/rss/toppodcasts/limit=100/genre=1310/json',
-  urlApiObtainDetailPodCast: ' https://itunes.apple.com/lookup?id=',
+  urlApi: 'https://api.allorigins.win/raw?url=https://itunes.apple.com/us/rss/toppodcasts/limit=100/genre=1310/json',
+  urlApiObtainDetailPodCast: 'https://itunes.apple.com/lookup?id=',
 };
   
 // return env conf; develop or production
