@@ -14,7 +14,7 @@ const template = (component) => {
     <div>
       <BreadCrumb />
       {data.length == 0 ?
-        <CircularProgress sx={{ width: '20px !important', height: '20px !important', position: 'absolute', right: '100px', top: 0}}/>
+        <CircularProgress sx={{ width: '20px !important', height: '20px !important', position: 'absolute', right: '100px', top: 20}}/>
        : ''}
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={2}>
